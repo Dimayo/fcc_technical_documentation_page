@@ -1,25 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>FCC Technical Documentation Page</title>
+    <link href="style.css" rel="stylesheet">
 </head>
+
 <body>
 
 <nav id="navbar">
-   <h1>CSS Documentation</h1>
-    <ul>
-        <li><a class="nav-link" href="#What_is_CSS">What is CSS</a></li>
-        <li><a class="nav-link" href="#How_does_CSS_affects_HTML">How does CSS affects HTML</a></li>
-        <li><a class="nav-link" href="#How_does_CSS_actually_work">How does CSS actually work</a></li>
-        <li><a class="nav-link" href="#About_the_DOM">Make and commit changes</a></li>
-        <li><a class="nav-link" href="#How_to_apply_CSS_to_HTML">How to apply CSS to HTML</a></li>
-    </ul>
-</nav>
-<main id="main-doc">
 
+   <header><img src="images/css-3.svg" alt="" height="80">CSS Documentation</header>
+    <div class="nav-list">
+        <a class="nav-link" href="#What_is_CSS">What is CSS</a>
+        <a class="nav-link" href="#How_does_CSS_affects_HTML">How does CSS affects HTML</a>
+        <a class="nav-link" href="#How_does_CSS_actually_work">How does CSS actually work</a>
+        <a class="nav-link" href="#About_the_DOM">About the DOM</a></li>
+        <a class="nav-link" href="#How_to_apply_CSS_to_HTML">How to apply CSS to HTML</a>
+    </div>
+</nav>
+
+<main id="main-doc">
+    <div class="main-container">
     <section class="main-section" id="What_is_CSS">
-        <h2>What is CSS</h2>
+        <header>What is CSS</header>
         <article>
             <p>CSS (Cascading Style Sheets) is a language for specifying how documents are presented to users — how they are styled, laid out, etc.</p>
             <p>A document is usually a text file structured using a markup language — HTML is the most common markup language, but you will also come across other markup languages such as SVG or XML</p>
@@ -28,7 +32,7 @@
     </section>
 
     <section class="main-section" id="How_does_CSS_affects_HTML">
-        <h2>How does CSS affects HTML</h2>
+        <header>How does CSS affects HTML</header>
         <article>
             <p>Web browsers apply CSS rules to a document to affect how they are displayed. A CSS rule is formed from:</p>
             <ul>
@@ -47,8 +51,8 @@
     &lt;link rel="stylesheet" href="style.css"&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;h1&gt;Hello World!&lt;/h1&gt;
-    &lt;p>This is my first CSS example&lt;/p&gt;
+    &lt;h1&gt;Hello!&lt;/h1&gt;
+    &lt;p>This is CSS example&lt;/p&gt;
   &lt;/body&gt;
 &lt;/html&gt;
            </code></pre>
@@ -75,8 +79,8 @@ p {
         </article>
     </section>
 
-    <section class="main-section" id="How_does_CSS_actually_work"></section>
-    <h2>How does CSS actually work</h2>
+    <section class="main-section" id="How_does_CSS_actually_work">
+    <header>How does CSS actually work</header>
     <article>
         <p>When a browser displays a document, it must combine the document's content with its style information. It processes the document in two stages:</p>
         <ol>
@@ -84,9 +88,10 @@ p {
             <li>The browser displays the contents of the DOM.</li>
         </ol>
     </article>
+    </section>
 
     <section class="main-section" id="About_the_DOM">
-    <h2>About the DOM</h2>
+    <header>About the DOM</header>
         <article>
     <p>A DOM has a tree-like structure. Each element, attribute and piece of text in the markup language becomes a DOM node in the tree structure. The nodes are defined by their relationship to other DOM nodes. Some elements are parents of child nodes, and child nodes have siblings.</p>
     <p>Understanding the DOM helps you design, debug and maintain your CSS because the DOM is where your CSS and the document's content meet up.</p>
@@ -135,7 +140,7 @@ span {
     </section>
 
     <section class="main-section" id="How_to_apply_CSS_to_HTML">
-        <h2>How to apply CSS to HTML</h2>
+        <header>How to apply CSS to HTML</header>
         <article>
             <p>There are three different ways to apply CSS to an HTML document that you'll commonly come across, some more useful than others. Here we'll briefly review each one.</p>
             <h3>External stylesheet</h3>
@@ -149,8 +154,8 @@ span {
     &lt;link rel="stylesheet" href="style.css"&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;h1&gt;Hello World!&lt;/h1&gt;
-    &lt;p&gt;This is my first CSS example&lt;/p&gt;
+    &lt;h1&gt;Hello!&lt;/h1&gt;
+    &lt;p&gt;This is CSS example&lt;/p&gt;
   &lt;/body&gt;
 &lt;/html&gt;
             </code></pre>
@@ -188,8 +193,8 @@ p {
     &lt;/style&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;h1&gt;Hello World!&lt;/h1&gt;
-    &lt;p&gt;This is my first CSS example&lt;/p&gt;
+    &lt;h1&gt;Hello!&lt;/h1&gt;
+    &lt;p&gt;This is CSS example&lt;/p&gt;
  &lt;/body&gt;
 &lt;/html&gt;
           </code></pre>
@@ -204,20 +209,18 @@ p {
     &lt;title>My CSS experiment&lt;/title&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;h1 style="color: blue;background-color: yellow;border: 1px solid black;"&gt;Hello World!&lt;/h1&gt;
-    &lt;p style="color:red;"&gt;This is my first CSS example&lt;/p&gt;
+    &lt;h1 style="color: blue;"&gt;Hello!&lt;/h1&gt;
+    &lt;p&gt;This is CSS example&lt;/p&gt;
   &lt;/body&gt;
 &lt;/html&gt;
             </code></pre>
             <p>Please don't do this, unless you really have to! It is really bad for maintenance (you might have to update the same information multiple times per document), and it also mixes your presentational CSS information with your HTML structural information, making the CSS harder to read and understand. Keeping your different types of code separated and pure makes for a much easier job for all who work on the code.</p>
             <p>The only time you might have to resort to using inline styles is when your working environment is really restrictive (perhaps your CMS only allows you to edit the HTML body.)</p>
         </article>
-
     </section>
-
+</div>
 </main>
 
-
-
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </body>
 </html>
