@@ -146,14 +146,19 @@ pre code {
 
 @media (max-width: 500px) {
     pre code {
-        padding: 0 2%;
+        padding: 0 1%;
     }
 
     .main-section {
         padding: 0 2% 10px 2%;
     }
 
+    #navbar header {
+        text-align: center;
+    }
+
 }
+
 
 
 
