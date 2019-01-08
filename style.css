@@ -146,11 +146,11 @@ pre code {
 
 @media (max-width: 500px) {
     pre code {
-        padding: 0 3%;
+        padding: 0 2%;
     }
 
     .main-section {
-        padding: 0 3% 10px 3%;
+        padding: 0 2% 10px 2%;
     }
 
 }
