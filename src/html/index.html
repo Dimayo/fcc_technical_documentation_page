@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html class="document" lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FCC Technical Documentation Page</title>
+  <link href="style.css" rel="stylesheet">
+  <link rel="shortcut icon" href="images/favicon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+
+<body class="body">
+
+  <nav class="navbar">
+    <header class="navbar__title"><img src="images/css-3.svg" alt="" height="80">CSS Documentation</header>
+    <div class="navbar__list">
+      <a class="navbar__link" href="#What_is_CSS">What is CSS</a>
+      <a class="navbar__link" href="#How_does_CSS_affects_HTML">How does CSS affects HTML</a>
+      <a class="navbar__link" href="#How_does_CSS_actually_work">How does CSS actually work</a>
+      <a class="navbar__link" href="#About_the_DOM">About the DOM</a>
+      <a class="navbar__link" href="#How_to_apply_CSS_to_HTML">How to apply CSS to HTML</a>
+    </div>
+  </nav>
+
+  <main class="main">
+    <div class="main__inner">
+      <section class="main__section" id="What_is_CSS">
+        <header class="main__header">What is CSS</header>
+        <article>
+          <p class="main__text">CSS (Cascading Style Sheets) is a language for specifying how documents are presented
+            to users — how they
+            are styled, laid out, etc.</p>
+          <p class="main__text">A document is usually a text file structured using a markup language — HTML is the most
+            common markup
+            language, but you will also come across other markup languages such as SVG or XML</p>
+          <p class="main__text">Presenting a document to a user means converting it into a usable form for your
+            audience. Browsers, like
+            Firefox, Chrome or Internet Explorer, are designed to present documents visually, for example, on a
+            computer screen, projector or printer.</p>
+        </article>
+      </section>
+
+      <section class="main__section" id="How_does_CSS_affects_HTML">
+        <header class="main__header">How does CSS affects HTML</header>
+        <article>
+          <p class="main__text">Web browsers apply CSS rules to a document to affect how they are displayed. A CSS rule
+            is formed from:</p>
+          <ul>
+            <li>A set of properties, which have values set to update how the HTML content is displayed, for example, I
+              want my element's width to be 50% of its parent element, and its background to be red.</li>
+            <li>A selector, which selects the element(s) you want to apply the updated property values to. For example,
+              I want to apply my CSS rule to all the paragraphs in my HTML document.</li>
+          </ul>
+          <p class="main__text">A set of CSS rules contained within a stylesheet determines how a webpage should look.
+            You will learn a
+            lot more about what CSS syntax looks like in the next article of the module — CSS Syntax.</p>
+          <h3 class="main__subheader">A quick CSS example</h3>
+          <p class="main__text">The above descriptions may or may not have made sense, so let's make sure things are
+            clear by presenting a
+            quick example. First of all, let's take a simple HTML document, containing an <code class="main__code">&lt;h1&gt;;</code>
+            and
+            a <code>&lt;p&gt;;</code> (notice that a stylesheet is applied to the HTML using a <code class="main__code">&lt;link&gt;</code>
+            element):</p>
+          <pre><code class="main__code main__code_block">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title>My CSS experiment&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello!&lt;/h1&gt;
+    &lt;p>This is CSS example&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+           </code></pre>
+          <p class="main__text">Now let's look at a very simple CSS example containing two rules:</p>
+          <pre><code class="main__code main__code_block">
+h1 {
+  color: blue;
+  background-color: yellow;
+  border: 1px solid black;
+}
+
+p {
+  color: red;
+}
+      </code></pre>
+          <p class="main__text">The first rule starts with an h1 selector, which means that it will apply its property
+            values to the <code class="main__code">&lt;h1&gt;</code>
+            element. It contains three properties and their values (each property/value pair is called a declaration):</p>
+          <ol>
+            <li>The first one sets the text color to blue</li>
+            <li>The second sets the background color to yellow.</li>
+            <li>The third one puts a border around the header that is 1 pixel wide, solid (not dotted, or dashed,
+              etc.), and colored black.</li>
+          </ol>
+          <p class="main__text">The second rule starts with a p selector, which means that it will apply its property
+            values to the <code class="main__code">&lt;p&gt;</code>
+            element. It contains one declaration, which sets the text color to red.</p>
+
+        </article>
+      </section>
+
+      <section class="main__section" id="How_does_CSS_actually_work">
+        <header class="main__header">How does CSS actually work</header>
+        <article>
+          <p class="main__text">When a browser displays a document, it must combine the document's content with its
+            style information. It
+            processes the document in two stages:</p>
+          <ol>
+            <li>The browser converts HTML and CSS into the DOM (Document Object Model). The DOM represents the document
+              in the computer's memory. It combines the document's content with its style.</li>
+            <li>The browser displays the contents of the DOM.</li>
+          </ol>
+        </article>
+      </section>
+
+      <section class="main__section" id="About_the_DOM">
+        <header class="main__header">About the DOM</header>
+        <article>
+          <p class="main__text">A DOM has a tree-like structure. Each element, attribute and piece of text in the
+            markup language becomes
+            a DOM node in the tree structure. The nodes are defined by their relationship to other DOM nodes. Some
+            elements are parents of child nodes, and child nodes have siblings.</p>
+          <p class="main__text">Understanding the DOM helps you design, debug and maintain your CSS because the DOM is
+            where your CSS and
+            the document's content meet up.</p>
+          <h3 class="main__subheader">DOM representation</h3>
+          <p class="main__text">Rather than a long, boring explanation, let's take an example to see how the DOM and
+            CSS work together.</p>
+          <p class="main__text">Let's assume the following HTML code:</p>
+          <pre><code class="main__code main__code_block">
+&lt;p&gt;
+  Let's use:
+  &lt;span&gt;Cascading&lt;/span&gt;
+  &lt;span>Style&lt;/span&gt;
+  &lt;span&gt;Sheets&lt;/span&gt;
+&lt;/p&gt;
+    </code></pre>
+          <p class="main__text">In the DOM, the node corresponding to our <code>&lt;p&gt;</code> element is a parent.
+            Its children are a
+            text node and the nodes corresponding to our <code class="main__code">&lt;span&gt;</code> elements. The
+            SPAN nodes are also
+            parents, with text nodes as their children:</p>
+          <pre><code class="main__code main__code_block">
+P
+├─ "Let's use:"
+├─ SPAN
+|  └─ "Cascading"
+├─ SPAN
+|  └─ "Style"
+└─ SPAN
+   └─ "Sheets"
+    </code></pre>
+          <p class="main__text">This is how a browser interprets the previous HTML snippet - it renders the above DOM
+            tree and then
+            outputs it in the browser</p>
+          <h3 class="main__subheader">Applying CSS to the DOM</h3>
+          <p class="main__text">Let's say we added some CSS to our document, to style it. Again, the HTML is as
+            follows:</p>
+          <pre><code class="main__code main__code_block">
+&lt;p&gt;
+  Let's use:
+  &lt;span&gt;Cascading&lt;/span&gt;
+  &lt;span>Style&lt;/span&gt;
+  &lt;span&gt;Sheets&lt;/span&gt;
+&lt;/p&gt;
+    </code></pre>
+          <p class="main__text">If we apply the following CSS to it:</p>
+          <pre><code class="main__code main__code_block">
+span {
+  border: 1px solid black;
+  background-color: lime;
+}
+    </code></pre>
+          <p class="main__text">The browser will parse the HTML and create a DOM from it, then parse the CSS. Since the
+            only rule
+            available in the CSS has a span selector, it will apply that rule to each one of the three spans.</p>
+        </article>
+      </section>
+
+      <section class="main__section" id="How_to_apply_CSS_to_HTML">
+        <header class="main__header">How to apply CSS to HTML</header>
+        <article>
+          <p class="main__text">There are three different ways to apply CSS to an HTML document that you'll commonly
+            come across, some
+            more useful than others. Here we'll briefly review each one.</p>
+          <h3 class="main__subheader">External stylesheet</h3>
+          <p class="main__text">You've already seen external stylesheets in this article, but not by that name. An
+            external stylesheet is
+            when you have your CSS written in a separate file with a .css extension, and you reference it from an HTML
+            <code class="main__code">&lt;link&gt;</code> element. The HTML file looks something like this:</p>
+          <pre><code class="main__code main__code_block">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;My CSS experiment&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello!&lt;/h1&gt;
+    &lt;p&gt;This is CSS example&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+          <p class="main__text">And the CSS file:</p>
+          <pre><code class="main__code main__code_block">
+h1 {
+  color: blue;
+  background-color: yellow;
+  border: 1px solid black;
+}
+
+p {
+  color: red;
+}
+            </code></pre>
+          <p class="main__text">This method is arguably the best, as you can use one stylesheet to style multiple
+            documents, and would
+            only need to update the CSS in one place if changes were needed.</p>
+          <h3 class="main__subheader">Internal stylesheet</h3>
+          <p class="main__text">An internal stylesheet is where you don't have an external CSS file, but instead place
+            your CSS inside a
+            <code class="main__code">&lt;style&gt;</code> element, contained inside the HTML head. So the HTML would
+            look like this:</p>
+          <pre><code class="main__code main__code_block">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title>My CSS experiment&lt;/title&gt;
+    &lt;style&gt;
+      h1 {
+          color: blue;
+          background-color: yellow;
+          border: 1px solid black;
+      }
+
+      p {
+          color: red;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello!&lt;/h1&gt;
+    &lt;p&gt;This is CSS example&lt;/p&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+          </code></pre>
+          <p class="main__text">This can be useful in some circumstances (maybe you're working with a content
+            management system where you
+            can't modify the CSS files directly), but it isn't quite as efficient as external stylesheets — in a
+            website, the CSS would need to be repeated across every page, and updated in multiple places if changes
+            were required.</p>
+          <h3 class="main__subheader">Inline styles</h3>
+          <p class="main__text">Inline styles are CSS declarations that affect one element only, contained within a
+            style attribute:</p>
+          <pre><code class="main__code main__code_block">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title>My CSS experiment&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1 style="color: blue;"&gt;Hello!&lt;/h1&gt;
+    &lt;p&gt;This is CSS example&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+          <p class="main__text">Please don't do this, unless you really have to! It is really bad for maintenance (you
+            might have to
+            update the same information multiple times per document), and it also mixes your presentational CSS
+            information with your HTML structural information, making the CSS harder to read and understand. Keeping
+            your different types of code separated and pure makes for a much easier job for all who work on the code.</p>
+          <p class="main__text">The only time you might have to resort to using inline styles is when your working
+            environment is really
+            restrictive (perhaps your CMS only allows you to edit the HTML body.)</p>
+        </article>
+      </section>
+    </div>
+  </main>
+
+<script src="bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+.navbar {
+    background-color: $background-color;
+    border-radius: 5px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    position: static;
+    margin: 0 0 20px 0;
+
+    @media (min-width: 1100px) {
+        margin: 10px;
+        position: fixed;
+    }
+
+    &__title {
+        padding: 30px 30px 20px 30px;
+        display: flex;
+        align-items: center;
+        font-size: 30px;
+        font-weight: bold;
+        flex-direction: column;
+        color: $main-color;
+        margin: 0;
+        text-align: center;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        margin: 0;
+    }
+
+    &__list :first-child {
+        border-top: 1px solid $main-color;
+    }
+
+    &__link {
+
+        text-decoration: none;
+        color: #2b2b2b;
+        font-size: 18px;
+        transition: all 0.3s ease;
+        border-top: 1px solid #A2ACBD;
+        padding: 18px 20px 18px 20px;
+        text-align: center;
+
+        @media (min-width: 1100px) {
+            padding: 18px 20px 18px 50px;
+            text-align: left;
+        }
+    }
+
+    &__link:hover {
+        background-color: $main-color;
+        color: $background-color;
+    }
+}
